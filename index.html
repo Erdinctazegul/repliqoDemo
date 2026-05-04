@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repliqo - Proje Bilgilendirme</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        primary: '#E50914',
+                        darkbg: '#080808',
+                        cardbg: '#151515'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(229, 9, 20, 0.20), transparent 34%),
+                radial-gradient(circle at bottom right, rgba(229, 9, 20, 0.13), transparent 35%),
+                #080808;
+            color: #fff;
+        }
+
+        .red-glow {
+            box-shadow: 0 0 28px rgba(229, 9, 20, 0.25);
+        }
+
+        .card-hover {
+            transition: all 0.25s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229, 9, 20, 0.75);
+            box-shadow: 0 0 28px rgba(229, 9, 20, 0.20);
+        }
+
+        .section-title-line {
+            width: 75px;
+            height: 4px;
+            background: #E50914;
+            border-radius: 999px;
+        }
+
+        .screenshot-box {
+            background: #0b0b0b;
+            border: 1px solid rgba(229, 9, 20, 0.35);
+            border-radius: 22px;
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        .screenshot-img {
+            width: 100%;
+            height: auto;
+            max-height: 430px;
+            object-fit: contain;
+            object-position: top;
+            border-radius: 16px;
+            display: block;
+            background: #000;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: auto;
+            max-height: 420px;
+            object-fit: contain;
+            object-position: top;
+            border-radius: 18px;
+            display: block;
+            background: #000;
+        }
+
+        .number-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 999px;
+            background: #E50914;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="w-full bg-black/85 backdrop-blur-md border-b border-red-900/40 sticky top-0 z-50">
+        <div class="w-full px-5 md:px-8 py-4 flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-film text-primary text-2xl"></i>
+                <span class="text-2xl font-extrabold tracking-wider">
+                    REPLI<span class="text-primary">QO</span>
+                </span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-6 text-sm text-gray-300">
+                <span>Doğu Akdeniz Üniversitesi</span>
+                <span class="w-1 h-1 rounded-full bg-primary"></span>
+                <span>GBYF KIBRIS</span>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="min-h-[78vh] flex items-center border-b border-red-900/30">
+        <div class="max-w-7xl mx-auto px-5 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/40 text-primary text-sm font-semibold mb-6">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    Dizi ve Film Replikleri İçin Sosyal Keşif Platformu
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                    Replikleri Bul, <br>
+                    Sahneyi İncele, <br>
+                    <span class="text-primary">Favorilerine Ekle.</span>
+                </h1>
+
+                <p class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-2xl">
+                    Repliqo, kullanıcıların dizi ve filmlerde geçen unutulmaz replikleri kolayca bulmasını sağlar.
+                    Kullanıcı aradığı cümleyi yazar, repliğin geçtiği yapımı, sezonu, bölümü ve zaman bilgisini görür.
+                    Beğendiği replikleri favorilerine ekleyerek daha sonra tekrar ulaşabilir.
+                </p>
+            </div>
+
+            <div class="screenshot-box red-glow">
+                <img src="./ana sayfa.png" alt="Repliqo Ana Sayfa" class="hero-img">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- REPLIQO NEDIR -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+                    Repliqo Nedir?
+                </h2>
+                <div class="section-title-line mx-auto"></div>
+                <p class="text-gray-400 mt-5 max-w-3xl mx-auto">
+                    Repliqo, dizi ve film repliklerini aramayı kolaylaştıran, kullanıcıya sahne bilgisi sunan
+                    ve sevilen replikleri kaydetme imkanı veren modern bir web platformudur.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
+                    <i class="fa-solid fa-magnifying-glass text-primary text-3xl mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Kolay Arama</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Kullanıcı, hatırladığı bir repliği arama kutusuna yazarak ilgili sonuçlara hızlıca ulaşabilir.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
+                    <i class="fa-solid fa-clock text-primary text-3xl mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Sahne Bilgisi</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Repliğin geçtiği dizi veya film, sezon, bölüm ve zaman bilgisi kullanıcıya düzenli şekilde gösterilir.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
+                    <i class="fa-solid fa-bookmark text-primary text-3xl mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Favorilere Ekleme</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Kullanıcı beğendiği replikleri favorilerine ekleyerek daha sonra kolayca tekrar ulaşabilir.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SAYFALAR -->
+    <section class="py-20 bg-black/40 border-y border-red-900/30">
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+                    Sitede Bulunan Sayfalar
+                </h2>
+                <div class="section-title-line mx-auto"></div>
+                <p class="text-gray-400 mt-5 max-w-3xl mx-auto">
+                    Aşağıdaki bölümlerde Repliqo’da kullanıcının karşılaşacağı temel sayfalar
+                    ekran görüntüleri ve kısa açıklamalarla gösterilmiştir.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+
+                <!-- 1 ANA SAYFA -->
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 md:p-8 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                        <div class="screenshot-box">
+                            <img src="./ana sayfa.png" alt="Ana Sayfa" class="screenshot-img">
+                        </div>
+
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="number-badge">1</div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold">Ana Sayfa</h3>
+                            </div>
+
+                            <p class="text-gray-300 leading-relaxed text-lg">
+                                Ana sayfa, kullanıcının siteye girdiğinde ilk gördüğü bölümdür.
+                                Kullanıcı burada aramak istediği repliği yazar ve arama işlemini başlatır.
+                                Sayfa sade, karanlık tema odaklı ve hızlı kullanım için tasarlanmıştır.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 2 ARAMA / SONUC SAYFASI -->
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 md:p-8 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                        <div class="order-1 lg:order-2 screenshot-box">
+                            <img src="./arama.png" alt="Arama ve Sonuç Sayfası" class="screenshot-img">
+                        </div>
+
+                        <div class="order-2 lg:order-1">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="number-badge">2</div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold">Arama Sonuçları</h3>
+                            </div>
+
+                            <p class="text-gray-300 leading-relaxed text-lg">
+                                Kullanıcının aradığı replikle ilgili sonuçlar bu sayfada listelenir.
+                                Her sonuçta repliğin hangi yapımda geçtiği, sezon ve bölüm bilgisi,
+                                zaman bilgisi, favoriye ekleme ve “Sahneye Sor” seçenekleri yer alır.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 3 SAHNEYE SOR -->
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 md:p-8 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                        <div class="screenshot-box">
+                            <img src="./sahneyesor.png" alt="Sahneye Sor" class="screenshot-img">
+                        </div>
+
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="number-badge">3</div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold">Sahneye Sor</h3>
+                            </div>
+
+                            <p class="text-gray-300 leading-relaxed text-lg">
+                                Bu bölümde kullanıcı seçtiği replik hakkında kısa bir sahne yorumu alabilir.
+                                Kullanıcı hazır sorulardan birini seçebilir veya kendi sorusunu yazabilir.
+                                Böylece repliğin sahnedeki anlamı ve bağlamı daha anlaşılır hale gelir.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 4 HESAP AYARLARI -->
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 md:p-8 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                        <div class="order-1 lg:order-2 screenshot-box">
+                            <img src="./ayarlar.png" alt="Hesap Ayarları" class="screenshot-img">
+                        </div>
+
+                        <div class="order-2 lg:order-1">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="number-badge">4</div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold">Hesap Ayarları</h3>
+                            </div>
+
+                            <p class="text-gray-300 leading-relaxed text-lg">
+                                Kullanıcı bu sayfada profil bilgilerini düzenleyebilir.
+                                Kullanıcı adı ve e-posta bilgileri güncellenebilir.
+                                Ayrıca kullanıcı isterse şifre belirleme veya şifre değiştirme işlemini de buradan yapabilir.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 5 FAVORI REPLIKLER -->
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 md:p-8 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                        <div class="screenshot-box">
+                            <img src="./favori.png" alt="Favori Repliklerim" class="screenshot-img">
+                        </div>
+
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="number-badge">5</div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold">Favori Repliklerim</h3>
+                            </div>
+
+                            <p class="text-gray-300 leading-relaxed text-lg">
+                                Kullanıcı beğendiği veya daha sonra tekrar görmek istediği replikleri favorilerine ekleyebilir.
+                                Bu sayfada favoriye alınan replikler listelenir.
+                                Kullanıcı dizi, sezon, bölüm ve zaman bilgisini tekrar görebilir ve isterse repliği favorilerinden çıkarabilir.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KULLANICIYA SUNULAN OZELLIKLER -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+                    Kullanıcıya Sunulan Özellikler
+                </h2>
+                <div class="section-title-line mx-auto"></div>
+                <p class="text-gray-400 mt-5 max-w-3xl mx-auto">
+                    Repliqo’nun temel amacı, kullanıcıların aradığı repliğe hızlıca ulaşmasını
+                    ve sahne bilgilerini düzenli şekilde incelemesini sağlamaktır.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="fa-solid fa-circle-check text-primary text-2xl"></i>
+                        <h3 class="text-2xl font-bold">Mevcut Özellikler</h3>
+                    </div>
+
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Replik arama</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Dizi veya film bilgisi görüntüleme</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Sezon, bölüm ve zaman bilgisi gösterme</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Replikleri favorilere ekleme</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Favoriye alınan replikleri listeleme</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Seçilen replik hakkında kısa sahne yorumu alma</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Karanlık ve sade kullanıcı arayüzü</li>
+                    </ul>
+                </div>
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="fa-solid fa-rocket text-primary text-2xl"></i>
+                        <h3 class="text-2xl font-bold">Yakında Eklenmesi Planlananlar</h3>
+                    </div>
+
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fa-solid fa-plus text-primary mr-2"></i> Replik paylaşımı</li>
+                        <li><i class="fa-solid fa-plus text-primary mr-2"></i> Beğeni ve yorum sistemi</li>
+                        <li><i class="fa-solid fa-plus text-primary mr-2"></i> Arkadaş ekleme ve takip sistemi</li>
+                        <li><i class="fa-solid fa-plus text-primary mr-2"></i> Kullanıcı profili ve etkileşim alanları</li>
+                        <li><i class="fa-solid fa-plus text-primary mr-2"></i> Replik tahminine dayalı arkadaş meydan okuma modu</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HEDEF KITLE -->
+    <section class="py-20 bg-black/40 border-y border-red-900/30">
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+                    Kimler İçin?
+                </h2>
+                <div class="section-title-line mx-auto"></div>
+                <p class="text-gray-400 mt-5 max-w-3xl mx-auto">
+                    Repliqo, dizi ve film repliklerini seven, sahneleri hatırlamak isteyen
+                    ve favori repliklerini kaydetmek isteyen kullanıcılar için tasarlanmıştır.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
+                    <i class="fa-solid fa-tv text-primary text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Dizi ve Film Tutkunları</h3>
+                    <p class="text-gray-400 text-sm">
+                        Sevdiği sahneleri ve unutulmaz replikleri tekrar bulmak isteyen kullanıcılar.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
+                    <i class="fa-solid fa-users text-primary text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Fandom Toplulukları</h3>
+                    <p class="text-gray-400 text-sm">
+                        Ortak dizi ve film kültürü üzerinden etkileşim kurmak isteyen topluluklar.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
+                    <i class="fa-solid fa-photo-film text-primary text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">İçerik Üreticileri</h3>
+                    <p class="text-gray-400 text-sm">
+                        Paylaşım yaparken doğru replik ve sahne bilgisine ulaşmak isteyen kullanıcılar.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
+                    <i class="fa-solid fa-graduation-cap text-primary text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Öğrenciler ve Kulüpler</h3>
+                    <p class="text-gray-400 text-sm">
+                        Medya, sinema ve dijital kültür alanında içerik keşfetmek isteyen kullanıcılar.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AMAC -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-5 text-center">
+
+            <div class="bg-cardbg border border-red-900/40 rounded-3xl p-8 md:p-12 red-glow">
+                <i class="fa-solid fa-star text-primary text-4xl mb-6"></i>
+
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-5">
+                    Repliqo’nun Amacı
+                </h2>
+
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Repliqo, kullanıcıların dizi ve film repliklerini daha hızlı, düzenli ve anlaşılır şekilde bulmasını amaçlar.
+                    Kullanıcı yalnızca repliği bulmakla kalmaz; repliğin geçtiği sahneye ait bilgileri görür,
+                    favorilerine ekler ve ilerleyen süreçte sosyal özelliklerle diğer kullanıcılarla etkileşim kurabilir.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-red-900/40 py-10">
+        <div class="max-w-7xl mx-auto px-5 text-center">
+
+            <h2 class="text-3xl font-extrabold mb-2">
+                REPLI<span class="text-primary">QO</span>
+            </h2>
+
+            <p class="text-gray-400 mb-4">
+                Dizi ve Film Replikleri İçin Sosyal Keşif ve Etkileşim Platformu
+            </p>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+                Doğu Akdeniz Üniversitesi<br>
+                Öğrenci: Erdinç Tazegül<br>
+                Genç Beyinler Yeni Fikirler KIBRIS - Proje Pazarı ve Bitirme Projeleri Yarışması
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>
