@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repliqo Proje Posteri</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        :root {
+            --primary-dark: #0f172a; /* Poster ana başlık laciverti */
+            --secondary-dark: #1e293b; /* Kutu başlıkları laciverti */
+            --accent-red: #e11d48;
+            --bg-color: #f1f5f9;
+            --text-dark: #334155;
+            --text-light: #ffffff;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .poster-container {
+            background-color: var(--bg-color);
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        /* HEADER ALANI */
+        .header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+
+        .header h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .header-left-logo, .header-right-qr {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header-left-logo { left: 30px; text-align: left; }
+        .header-right-qr { right: 30px; text-align: center; }
+
+        .logo-placeholder {
+            width: 80px; height: 80px;
+            border: 2px solid white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: bold;
+        }
+
+        .qr-placeholder {
+            width: 80px; height: 80px;
+            background-color: white; color: var(--primary-dark);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin: 0 auto 5px auto;
+        }
+
+        /* ANA İÇERİK IZGARASI */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* Sol taraf UI için biraz daha geniş */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* KART TASARIMLARI */
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-header {
+            background-color: var(--secondary-dark);
+            color: var(--text-light);
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .card-body p { margin-bottom: 10px; }
+        .card-body ul { padding-left: 20px; }
+        .card-body li { margin-bottom: 8px; }
+
+        /* UI MOCKUP ALANLARI (SOL SÜTUN) */
+        .ui-section {
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .ui-box {
+            background-color: var(--primary-dark);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .ui-box-large { height: 200px; }
+        .ui-box-medium { height: 150px; }
+        .ui-box-small { height: 100px; }
+        
+        .ui-badge {
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--accent-red);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .bottom-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--secondary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="poster-container">
+    
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left-logo">
+            <div class="logo-placeholder">DAÜ Logo</div>
+            <div style="font-size: 0.7rem; margin-top: 5px;">1979</div>
+        </div>
+        
+        <h1>REPLIQO</h1>
+        <h2>Dizi ve Film Replikleri İçin Sosyal Keşif ve Etkileşim Platformu</h2>
+        <h3>Doğu Akdeniz Üniversitesi | Öğrenci: Erdinç Tazegül</h3>
+        
+        <div class="header-right-qr">
+            <div class="qr-placeholder">QR Kod</div>
+            <div style="font-size: 0.9rem;">Demo / QR</div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-grid">
+        
+        <!-- SOL SÜTUN (Arayüz ve Alt Özellikler) -->
+        <div class="column-left">
+            
+            <div class="card">
+                <div class="card-header" style="justify-content: center;">
+                    💻 PROJE ARAYÜZ GÖRSELLERİ
+                </div>
+                <div class="card-body">
+                    <div class="ui-section">
+                        <div class="ui-box ui-box-large">
+                            <div class="ui-badge">1</div>
+                            Ana Sayfa - Hızlı arama ve öneri deneyimi
+                        </div>
+                        <div class="ui-box ui-box-large">
+                            <div class="ui-badge">2</div>
+                            Sonuç Sayfası - Zaman bilgisi, sezon ve bölüm ile zengin sonuçlar
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div class="ui-box ui-box-medium">
+                                <div class="ui-badge">3</div>
+                                Sahneye Sor - AI destekli bağlam ve kısa yorum
+                            </div>
+                            <div class="ui-box ui-box-medium">
+                                <div class="ui-badge">4</div>
+                                Hesap Ayarları ve Kişisel Profil
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-features">
+                <div class="card">
+                    <div class="card-header">✔️ 5. MEVCUT ÖZELLİKLER</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Anahtar kelime ile replik arama</li>
+                            <li>Yapım / sezon / bölüm / zaman gösterimi</li>
+                            <li>Favorilere ekleme</li>
+                            <li>Sahneye Sor modülü ile AI destekli kısa yorum</li>
+                            <li>Modern, hızlı ve koyu tema odaklı arayüz</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">🚀 6. YAKINDA EKLENECEKLER</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Replik paylaşımı, beğeni ve yorum sistemi</li>
+                            <li>Takip et / arkadaş ekleme yapısı</li>
+                            <li>Reels benzeri dikey replik akışı</li>
+                            <li>Hikâye / durum paylaşımı</li>
+                            <li>Kullanıcı profili ve etkileşim istatistikleri</li>
+                            <li>Replik quizleri, rozetler ve kültürel profil yapısı</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SAĞ SÜTUN (Teorik Bilgiler) -->
+        <div class="column-right">
+            
+            <div class="card">
+                <div class="card-header">📄 1. ÖZET</div>
+                <div class="card-body">
+                    <p>Repliqo, dizi ve film repliklerini yalnızca aratan bir araç değil; zaman damgalı içerik keşfi, sahne bağlamı ve topluluk etkileşimini bir araya getiren yeni nesil bir 'replik sosyal medyası' yaklaşımıdır. Kullanıcılar replik arayabilir, favorilere ekleyebilir, sahne bağlamını inceleyebilir ve gelecekte topluluk odaklı etkileşimlerle replik kültürünün parçası olabilir.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">🎯 2. PROBLEM VE İHTİYAÇ</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Günümüzde kullanıcılar GPT ve genel arama araçlarıyla bilgiye hızlı ulaşıyor; ancak bu araçlar replik kültürü için özel, sosyal ve yapılandırılmış bir deneyim sunmuyor.</li>
+                        <li>İhtiyaç artık yalnızca 'bir repliği bulmak' değil; benzer replikler arasında gezmek, zaman bilgisiyle görmek, bağlamını anlamak ve replikler etrafında bir topluluk oluşturmaktır.</li>
+                        <li>Dizi ve film replikleri dijital kültürde güçlü bir ifade biçimi hâline gelmiştir, fakat bu alana odaklanan sosyal bir platform eksiktir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">⭐ 3. NEDEN REPLIQO?</div>
+                <div class="card-body">
+                    <ul>
+                        <li>GPT genel amaçlıdır, Repliqo ise medya-özel ve replik odaklıdır.</li>
+                        <li>Repliqo tek cevap vermek yerine gezilebilir, filtrelenebilir ve karşılaştırılabilir sonuçlar sunar.</li>
+                        <li>Yapım, sezon, bölüm ve zaman bilgisi aynı akışta gösterilir.</li>
+                        <li>AI destekli 'Sahneye Sor' modülü ile kısa bağlam ve sahne yorumu sunulur.</li>
+                        <li>Uzun vadede Repliqo, yalnızca bir arama motoru değil; repliklerin paylaşıldığı ve tartışıldığı bir kültür platformuna dönüşecektir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">👥 4. HEDEF KİTLE</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Dizi ve film tutkunları</li>
+                        <li>Fandom toplulukları</li>
+                        <li>İçerik üreticileri ve sosyal medya kullanıcıları</li>
+                        <li>Öğrenciler, kulüpler ve medya toplulukları</li>
+                        <li>Duygularını ve düşüncelerini repliklerle ifade etmeyi sevenler</li>
+                        <li>Replik odaklı bir sosyal medya deneyimi arayanlar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">&lt;/&gt; 7. TEKNOLOJİ ALTYAPI</div>
+                <div class="card-body">
+                    <p><strong>C#, ASP.NET Core MVC, Entity Framework Core, MS SQL Server, HTML, CSS, JavaScript, Bootstrap,</strong> AI destekli sahne yorumlama, vektör arama yaklaşımı ve altyapı veri işleme altyapısı kullanılmıştır.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📊 8. BEKLENEN KATKI VE ETKİ</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Replik merkezli niş bir dijital topluluk oluşturmak</li>
+                        <li>İçerik keşfini sosyal deneyime dönüştürmek</li>
+                        <li>Kullanıcıların replikler üzerinden etkileşim kurmasını sağlamak</li>
+                        <li>Dizi ve film kültürünü daha katılımcı ve paylaşılabilir hâle getirmek</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Genç Beyinler Yeni Fikirler KIBRIS - Proje Pazarı ve Bitirme Projeleri Yarışması
+    </div>
+
+</div>
+
+</body>
+</html>

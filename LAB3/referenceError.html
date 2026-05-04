@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>You cannot use the value of a non-exisiting variable.</p>
+    <p id="demo"></p>
+
+    <script>
+        let x=5;
+        try{
+            x=y+1;       // reference Error mantığıda burada görüldüğü gibi y tanımlı değil o yüzden catchdeki kodu yazar.
+            
+        }
+        catch(error){
+            document.getElementById("demo").innerHTML=err.name;
+        }
+    </script>
+    
+</body>
+</html>

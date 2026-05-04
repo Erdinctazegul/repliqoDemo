@@ -1,0 +1,27 @@
+// Question: use addEventListener method for the click function of an HTML button object
+// Soru karşılığı: HTML button nesnesinin click olayı için addEventListener kullan
+const windowButton = document.getElementById("btn");
+
+// Question: Else, display "You are staying!" message in a paragraph
+// Soru karşılığı: Mesajı göstermek için paragrafı seç
+const log = document.getElementById("log");
+
+// Question: use addEventListener method for the click function of an HTML button object
+// Soru karşılığı: Butona tıklanınca çalışacak click event ekle
+windowButton.addEventListener("click", function () {
+
+    // Question: Create an if statement inside the function and use confirm method of the window object
+    // Soru karşılığı: Fonksiyon içinde if oluştur ve window.confirm kullan
+    if (window.confirm("Do you want to open in new tab?")) {
+
+        // Question: If it is so, use open method of the window object to open a new tab with the content of "https://www.emu.edu.tr/en"
+        // Soru karşılığı: Eğer OK seçilirse verilen siteyi yeni sekmede aç
+        window.open("https://www.emu.edu.tr/en");
+    }
+    else {
+
+        // Question: Else, display "You are staying!" message in a paragraph
+        // Soru karşılığı: Aksi halde paragrafta "You are staying!" mesajını göster
+        log.innerText = "You are staying!";
+    }
+});

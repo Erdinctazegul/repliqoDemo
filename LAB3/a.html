@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Sayfanın mobil cihazlarda düzgün görünmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünen başlık -->
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Sayfada görünen başlık -->
+    <h2>JavaScript try catch</h2>
+
+    <!-- Kullanıcıdan ne istendiğini gösteren açıklama -->
+    <p>Please input a number between 5 and 10 :</p>
+
+    <!-- Kullanıcının veri gireceği kutu -->
+    <input id="demo" type="text">
+
+    <!-- Butona basılınca myFunction() çalışır -->
+    <button type="button" onclick="myFunction()">Test Input</button>
+
+    <!-- Sonucun veya hata mesajının yazdırılacağı alan -->
+    <p id="p01"></p>
+
+    <script>
+        // myFunction adında bir fonksiyon oluşturduk
+        // Bu fonksiyon butona basıldığında çalışır
+        function myFunction(){
+
+            // p01 id'li elementi seçiyoruz
+            // Hata mesajını veya sonucu bunun içine yazacağız
+            const message = document.getElementById("p01");
+
+            // Önce eski mesajı temizliyoruz
+            // Böylece her tıklamada eski yazı kalmaz
+            message.innerHTML = "";
+
+            // demo id'li input kutusundaki değeri alıyoruz
+            // Kullanıcının yazdığı değer x değişkenine aktarılır
+            let x = document.getElementById("demo").value;
+          
+            try{
+                // Eğer kullanıcı hiçbir şey yazmadıysa
+                // yani kutu boşsa "Empty" hatası fırlatılır
+                if(x.trim() == "") throw "Empty";
+
+                // Eğer girilen değer sayı değilse
+                // "Not a number" hatası fırlatılır
+                if(isNaN(x)) throw "Not a number";
+
+                // Girilen değer metin olarak gelir
+                // Bunu Number ile sayıya çeviriyoruz
+                x = Number(x);
+
+                // Eğer sayı 5'ten küçükse
+                // "too low" hatası fırlatılır
+                if(x < 5) throw "too low";
+
+                // Eğer sayı 10'dan büyükse
+                // "too high" hatası fırlatılır
+                if(x > 10) throw "too high";
+            }
+
+            catch(err){
+                // try bloğu içinde herhangi bir hata oluşursa
+                // hata catch tarafından yakalanır
+
+                // err hatanın içeriğini tutar
+                // Mesajı ekrana "Input is ..." şeklinde yazdırıyoruz
+                message.innerHTML = "Input is " + err;
+            }
+
+            finally {
+                // Hata olsa da olmasa da finally her zaman çalışır
+
+                // İşlem bittikten sonra input kutusunu temizler
+                document.getElementById("demo").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
