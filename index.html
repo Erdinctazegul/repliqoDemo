@@ -126,11 +126,14 @@
             background: rgba(229, 9, 20, 0.08);
         }
 
-        .phone-feed-image {
-            background:
-                linear-gradient(135deg, rgba(229, 9, 20, 0.35), rgba(10, 10, 10, 0.4)),
-                radial-gradient(circle at center, rgba(255, 255, 255, 0.18), transparent 35%),
-                #111;
+        /* Yeni Sinematik Feed Görseli */
+        .cinematic-feed-img {
+            background: 
+                linear-gradient(to top, rgba(0,0,0,0.9), transparent 50%),
+                radial-gradient(circle at center, rgba(229, 9, 20, 0.2), transparent 70%),
+                url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.05)"/></svg>'),
+                #0a0a0a;
+            background-size: cover, cover, 20px 20px, cover;
         }
 
         .race-track {
@@ -144,6 +147,27 @@
                     transparent 28px
                 );
         }
+
+        /* Animasyonlar */
+        @keyframes backgroundScroll {
+            from { background-position: 0 0; }
+            to { background-position: -20px 0; }
+        }
+        .bg-scroll-anim {
+            animation: backgroundScroll 1.5s linear infinite;
+        }
+        
+        .stat-card {
+            background: linear-gradient(145deg, #111 0%, #050505 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-panel {
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
     </style>
 </head>
 
@@ -152,42 +176,35 @@
     <!-- NAVBAR -->
     <nav class="w-full bg-black/90 backdrop-blur-md border-b border-red-900/40 sticky top-0 z-50">
         <div class="w-full px-5 md:px-8 py-4 flex items-center justify-between">
-
             <div class="flex items-center gap-3">
                 <span class="text-2xl font-extrabold tracking-wider">
                     REPLI<span class="text-primary">QO</span>
                 </span>
             </div>
-
             <div class="hidden md:flex items-center gap-6 text-sm text-gray-300">
                 <span>Doğu Akdeniz Üniversitesi</span>
                 <span class="w-1 h-1 rounded-full bg-primary"></span>
                 <span>GBYF KIBRIS</span>
             </div>
-
         </div>
     </nav>
 
     <!-- HERO -->
     <header class="min-h-[78vh] flex items-center border-b border-red-900/30">
         <div class="max-w-7xl mx-auto px-5 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
             <div>
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/40 text-primary text-sm font-semibold mb-6">
                     Dizi ve Film Replikleri İçin Sosyal Keşif Platformu
                 </div>
-
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
                     Replikleri Bul, <br>
                     Sahneyi Anla, <br>
                     <span class="text-primary">Keşfe Devam Et.</span>
                 </h1>
-
                 <p class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-2xl">
                     Repliqo, kullanıcıların dizi ve filmlerde geçen unutulmaz replikleri hızlıca bulmasını,
                     repliğin geçtiği sahneyi öğrenmesini ve beğendiği repliklere daha sonra tekrar ulaşmasını sağlar.
                 </p>
-
                 <div class="mt-8 flex flex-wrap gap-3">
                     <span class="chip px-4 py-2 rounded-full text-gray-200 text-sm">
                         <i class="fa-solid fa-magnifying-glass text-primary mr-2"></i> Akıllı Arama
@@ -203,18 +220,15 @@
                     </span>
                 </div>
             </div>
-
             <div class="screenshot-box red-glow">
                 <img src="./ana sayfa.png" alt="Repliqo Ana Sayfa" class="hero-img">
             </div>
-
         </div>
     </header>
 
     <!-- KISA ÖZET -->
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-5">
-
             <div class="mb-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
                     Repliqo Nedir?
@@ -225,9 +239,7 @@
                     modern bir dizi ve film replik platformudur.
                 </p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
                     <i class="fa-solid fa-magnifying-glass text-primary text-3xl mb-5"></i>
                     <h3 class="text-xl font-bold mb-3">Replik Arama</h3>
@@ -235,7 +247,6 @@
                         Kullanıcı hatırladığı bir cümleyi yazar ve ilgili dizi veya film sonuçlarına hızlıca ulaşır.
                     </p>
                 </div>
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
                     <i class="fa-solid fa-clock text-primary text-3xl mb-5"></i>
                     <h3 class="text-xl font-bold mb-3">Sahne Bilgisi</h3>
@@ -243,7 +254,6 @@
                         Sonuçlarda yapım, sezon, bölüm ve zaman bilgisi düzenli şekilde gösterilir.
                     </p>
                 </div>
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-7 card-hover">
                     <i class="fa-solid fa-wand-magic-sparkles text-primary text-3xl mb-5"></i>
                     <h3 class="text-xl font-bold mb-3">Context Desteği</h3>
@@ -251,7 +261,6 @@
                         “Sahneye Sor” bölümü, seçilen repliğin sahnedeki anlamını ve context bilgisini kısa şekilde açıklar.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -259,7 +268,6 @@
     <!-- MEVCUT DENEYİM VE YAKINDA -->
     <section class="py-20 bg-black/40 border-y border-red-900/30">
         <div class="max-w-7xl mx-auto px-5">
-
             <div class="mb-14 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
                     Mevcut Deneyim ve Yakında Eklenecekler
@@ -275,7 +283,6 @@
 
                 <!-- SOL: ŞU AN -->
                 <div class="bg-black/35 border border-red-900/50 rounded-[2rem] p-5 md:p-7 red-glow">
-
                     <div class="text-center mb-8">
                         <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/15 border border-primary/50 text-primary font-bold">
                             ŞU AN
@@ -284,13 +291,11 @@
                     </div>
 
                     <div class="space-y-8">
-
                         <!-- ANA SAYFA -->
                         <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 card-hover">
                             <div class="screenshot-box mb-5">
                                 <img src="./ana sayfa.png" alt="Ana Sayfa" class="screenshot-img">
                             </div>
-
                             <div class="flex items-start gap-4">
                                 <div class="number-badge">1</div>
                                 <div>
@@ -312,7 +317,6 @@
                             <div class="screenshot-box mb-5">
                                 <img src="./arama.png" alt="Sonuç Sayfası" class="screenshot-img">
                             </div>
-
                             <div class="flex items-start gap-4">
                                 <div class="number-badge">2</div>
                                 <div>
@@ -335,7 +339,6 @@
                             <div class="screenshot-box mb-5">
                                 <img src="./sahneyesor.png" alt="Sahneye Sor" class="screenshot-img">
                             </div>
-
                             <div class="flex items-start gap-4">
                                 <div class="number-badge">3</div>
                                 <div>
@@ -357,7 +360,6 @@
                             <div class="screenshot-box mb-5">
                                 <img src="./favori.png" alt="Favori Repliklerim" class="screenshot-img">
                             </div>
-
                             <div class="flex items-start gap-4">
                                 <div class="number-badge">4</div>
                                 <div>
@@ -373,13 +375,11 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                 <!-- SAĞ: YAKINDA -->
                 <div class="bg-black/35 border border-red-900/50 rounded-[2rem] p-5 md:p-7 red-glow">
-
                     <div class="text-center mb-8">
                         <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/15 border border-primary/50 text-primary font-bold">
                             YAKINDA
@@ -389,9 +389,12 @@
 
                     <div class="space-y-8">
 
-                        <!-- DASHBOARD -->
-                        <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 card-hover">
-                            <div class="flex items-center justify-between mb-4">
+                        <!-- 1. DASHBOARD -->
+                        <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 card-hover relative overflow-hidden">
+                            <!-- Background accent -->
+                            <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                            
+                            <div class="flex items-center justify-between mb-4 relative z-10">
                                 <div class="flex items-center gap-4">
                                     <div class="number-badge">1</div>
                                     <div>
@@ -399,54 +402,94 @@
                                         <p class="text-gray-400">Genel görünüm ve hızlı erişim</p>
                                     </div>
                                 </div>
-                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold">Yakında</span>
+                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold shadow-[0_0_10px_rgba(229,9,20,0.2)]">Yakında</span>
                             </div>
 
-                            <div class="mini-ui p-5">
-                                <div class="flex items-center justify-between mb-5">
+                            <div class="mini-ui p-5 relative z-10">
+                                <div class="flex items-center justify-between mb-6">
                                     <div>
-                                        <p class="text-gray-400 text-sm">Merhaba, User_Name</p>
-                                        <h5 class="text-xl font-bold">Bugün ne keşfedelim?</h5>
+                                        <p class="text-gray-400 text-sm flex items-center gap-2">
+                                            <i class="fa-regular fa-sun text-yellow-500"></i> Merhaba, User_Name
+                                        </p>
+                                        <h5 class="text-xl font-bold mt-1">Bugün ne keşfedelim?</h5>
                                     </div>
-                                    <i class="fa-solid fa-border-all text-primary text-2xl"></i>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-3 mb-4">
-                                    <div class="bg-black/50 border border-gray-800 rounded-2xl p-4">
-                                        <p class="text-gray-400 text-sm">Favoriler</p>
-                                        <p class="text-2xl font-extrabold text-primary">24</p>
-                                    </div>
-                                    <div class="bg-black/50 border border-gray-800 rounded-2xl p-4">
-                                        <p class="text-gray-400 text-sm">Takip</p>
-                                        <p class="text-2xl font-extrabold text-primary">18</p>
-                                    </div>
-                                    <div class="bg-black/50 border border-gray-800 rounded-2xl p-4">
-                                        <p class="text-gray-400 text-sm">Oyun</p>
-                                        <p class="text-2xl font-extrabold text-primary">7</p>
-                                    </div>
-                                    <div class="bg-black/50 border border-gray-800 rounded-2xl p-4">
-                                        <p class="text-gray-400 text-sm">Rozet</p>
-                                        <p class="text-2xl font-extrabold text-primary">12</p>
+                                    <div class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center bg-black/50 hover:bg-gray-800 transition-colors cursor-pointer">
+                                        <i class="fa-solid fa-border-all text-primary"></i>
                                     </div>
                                 </div>
 
-                                <div class="bg-black/50 border border-gray-800 rounded-2xl p-4">
-                                    <p class="text-sm text-gray-400 mb-2">Son Aramalar</p>
-                                    <div class="space-y-2 text-sm">
-                                        <div class="flex justify-between">
-                                            <span>“Son da başlangıç”</span>
-                                            <span class="text-primary">Dark</span>
+                                <!-- Profesyonel İstatistik Izgarası -->
+                                <div class="grid grid-cols-2 gap-3 mb-5">
+                                    <div class="stat-card rounded-2xl p-4 group cursor-pointer hover:border-primary/50 transition-colors">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <p class="text-gray-400 text-sm">Favoriler</p>
+                                            <i class="fa-solid fa-bookmark text-gray-600 group-hover:text-primary transition-colors"></i>
                                         </div>
-                                        <div class="flex justify-between">
-                                            <span>“Why so serious?”</span>
-                                            <span class="text-primary">The Dark Knight</span>
+                                        <p class="text-3xl font-black text-white">24</p>
+                                    </div>
+                                    <div class="stat-card rounded-2xl p-4 group cursor-pointer hover:border-blue-500/50 transition-colors">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <p class="text-gray-400 text-sm">Takip</p>
+                                            <i class="fa-solid fa-user-plus text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                                        </div>
+                                        <p class="text-3xl font-black text-white">18</p>
+                                    </div>
+                                    <div class="stat-card rounded-2xl p-4 group cursor-pointer hover:border-green-500/50 transition-colors">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <p class="text-gray-400 text-sm">Oyun</p>
+                                            <i class="fa-solid fa-gamepad text-gray-600 group-hover:text-green-400 transition-colors"></i>
+                                        </div>
+                                        <p class="text-3xl font-black text-white">7</p>
+                                    </div>
+                                    <div class="stat-card rounded-2xl p-4 group cursor-pointer hover:border-purple-500/50 transition-colors">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <p class="text-gray-400 text-sm">Rozet</p>
+                                            <i class="fa-solid fa-award text-gray-600 group-hover:text-purple-400 transition-colors"></i>
+                                        </div>
+                                        <p class="text-3xl font-black text-white">12</p>
+                                    </div>
+                                </div>
+
+                                <!-- Haftalık Etkileşim Grafiği Simülasyonu -->
+                                <div class="glass-panel rounded-2xl p-4 mb-5">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <p class="text-sm text-gray-300 font-semibold">Haftalık Keşif</p>
+                                        <span class="text-[10px] text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">+12%</span>
+                                    </div>
+                                    <div class="flex items-end justify-between h-12 gap-1 px-1">
+                                        <div class="w-full bg-primary/20 rounded-t-sm h-[40%] hover:bg-primary/40 transition-colors"></div>
+                                        <div class="w-full bg-primary/20 rounded-t-sm h-[70%] hover:bg-primary/40 transition-colors"></div>
+                                        <div class="w-full bg-primary/20 rounded-t-sm h-[30%] hover:bg-primary/40 transition-colors"></div>
+                                        <div class="w-full bg-primary/80 rounded-t-sm h-[100%] shadow-[0_0_10px_rgba(229,9,20,0.5)]"></div>
+                                        <div class="w-full bg-primary/20 rounded-t-sm h-[50%] hover:bg-primary/40 transition-colors"></div>
+                                        <div class="w-full bg-primary/20 rounded-t-sm h-[80%] hover:bg-primary/40 transition-colors"></div>
+                                        <div class="w-full bg-primary/20 rounded-t-sm h-[60%] hover:bg-primary/40 transition-colors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-black/40 border border-gray-800 rounded-2xl p-4">
+                                    <p class="text-sm text-gray-400 mb-3 border-b border-gray-800 pb-2">Son Aramalar</p>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex justify-between items-center group cursor-pointer">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-clock-rotate-left text-gray-600 group-hover:text-white transition-colors text-xs"></i>
+                                                <span class="text-gray-300 group-hover:text-white transition-colors">“Son da başlangıç”</span>
+                                            </div>
+                                            <span class="text-primary text-xs font-semibold bg-primary/10 px-2 py-1 rounded">Dark</span>
+                                        </div>
+                                        <div class="flex justify-between items-center group cursor-pointer">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-clock-rotate-left text-gray-600 group-hover:text-white transition-colors text-xs"></i>
+                                                <span class="text-gray-300 group-hover:text-white transition-colors">“Why so serious?”</span>
+                                            </div>
+                                            <span class="text-primary text-xs font-semibold bg-primary/10 px-2 py-1 rounded">The Dark Knight</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- SOSYAL AKIŞ -->
+                        <!-- 2. SOSYAL AKIŞ -->
                         <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 card-hover">
                             <div class="flex items-center justify-between mb-4">
                                 <div class="flex items-center gap-4">
@@ -456,70 +499,91 @@
                                         <p class="text-gray-400">Kayıtlı replik kartlarını keşfet</p>
                                     </div>
                                 </div>
-                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold">Yakında</span>
+                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold shadow-[0_0_10px_rgba(229,9,20,0.2)]">Yakında</span>
                             </div>
 
                             <div class="mini-ui p-5">
-                                <div class="flex gap-4 border-b border-gray-800 pb-3 mb-4 text-sm">
-                                    <span class="text-primary font-bold">Keşfet</span>
-                                    <span class="text-gray-500">Takip Edilen</span>
-                                    <span class="text-gray-500">Trend</span>
+                                <div class="flex gap-6 border-b border-gray-800 pb-3 mb-5 text-sm font-medium">
+                                    <span class="text-primary font-bold relative">
+                                        Keşfet
+                                        <div class="absolute -bottom-[13px] left-0 right-0 h-0.5 bg-primary rounded-t-full"></div>
+                                    </span>
+                                    <span class="text-gray-500 hover:text-gray-300 cursor-pointer transition-colors">Takip Edilen</span>
+                                    <span class="text-gray-500 hover:text-gray-300 cursor-pointer transition-colors">Trend</span>
                                 </div>
 
-                                <div class="bg-black/50 border border-gray-800 rounded-2xl p-4">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <div>
-                                            <p class="font-semibold">Repliqo Önerisi</p>
-                                            <p class="text-xs text-gray-500">Sistemde kayıtlı replik kartı</p>
-                                        </div>
-                                        <span class="future-badge px-3 py-1 rounded-full text-xs font-bold">Kart</span>
-                                    </div>
-
-                                    <p class="text-gray-200 mb-2">“I’m the king of the world!”</p>
-                                    <p class="text-primary text-sm mb-3">Titanic</p>
-
-                                    <div class="phone-feed-image h-40 rounded-2xl border border-red-900/40 mb-3 flex items-center justify-center">
-                                        <i class="fa-solid fa-film text-5xl text-white/25"></i>
-                                    </div>
-
-                                    <div class="flex items-center gap-6 text-gray-400 mb-4">
-                                        <span><i class="fa-solid fa-heart text-primary mr-1"></i>256</span>
-                                        <span><i class="fa-regular fa-comment mr-1"></i>34 yorum</span>
-                                        <span><i class="fa-regular fa-bookmark mr-1"></i>Favori</span>
-                                    </div>
-
-                                    <div class="bg-black/60 border border-gray-800 rounded-2xl p-4 mb-4">
-                                        <div class="flex items-start justify-between gap-3 mb-3">
+                                <!-- Profesyonel Akış Kartı -->
+                                <div class="stat-card rounded-2xl p-0 overflow-hidden mb-4 border border-gray-800/80">
+                                    <div class="p-4">
+                                        <div class="flex items-center justify-between mb-4">
                                             <div class="flex items-center gap-3">
-                                                <div class="w-10 h-10 rounded-full bg-primary/25 border border-primary/50"></div>
+                                                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-purple-600 p-[2px]">
+                                                    <div class="w-full h-full bg-black rounded-full flex items-center justify-center">
+                                                        <span class="text-xs font-bold">RQ</span>
+                                                    </div>
+                                                </div>
                                                 <div>
-                                                    <p class="font-semibold">movie_lover</p>
-                                                    <p class="text-xs text-gray-500">Kullanıcı yorumu</p>
+                                                    <p class="font-bold text-sm">Repliqo Önerisi</p>
+                                                    <p class="text-[11px] text-gray-500">Sistemde kayıtlı replik kartı</p>
                                                 </div>
                                             </div>
-
-                                            <button class="future-badge px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">
-                                                Takip Et
-                                            </button>
+                                            <i class="fa-solid fa-ellipsis text-gray-500 hover:text-white cursor-pointer"></i>
                                         </div>
 
-                                        <p class="text-sm text-gray-300 leading-relaxed">
-                                            Bu replik filmin en ikonik anlarından birini hatırlatıyor.
+                                        <p class="text-gray-100 font-medium mb-1 text-lg">“I’m the king of the world!”</p>
+                                        <p class="text-primary text-sm font-bold mb-4 flex items-center gap-1">
+                                            <i class="fa-solid fa-film text-xs"></i> Titanic
                                         </p>
                                     </div>
 
-                                    <div class="bg-primary/10 border border-primary/40 rounded-2xl p-4">
-                                        <p class="text-sm text-gray-300 leading-relaxed">
-                                            Kullanıcılar akışa yeni replik eklemez. Sadece Repliqo’da kayıtlı olan
-                                            replik kartlarını keşfeder, beğenir, yorumları görür, favorilerine ekler
-                                            ve yorum yapan kullanıcıları takip edebilir.
-                                        </p>
+                                    <!-- Sinematik Görsel Alanı -->
+                                    <div class="cinematic-feed-img h-48 border-y border-gray-800/50 flex flex-col justify-between p-4 relative group cursor-pointer">
+                                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                                        <div class="self-end bg-black/60 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold border border-white/10 z-10">02:14:35</div>
+                                        <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center self-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform z-10">
+                                            <i class="fa-solid fa-play text-white ml-1"></i>
+                                        </div>
                                     </div>
+
+                                    <div class="p-4">
+                                        <div class="flex items-center justify-between text-gray-400 mb-4">
+                                            <div class="flex gap-5">
+                                                <span class="hover:text-primary cursor-pointer transition-colors flex items-center gap-1.5"><i class="fa-solid fa-heart text-primary"></i> <span class="text-white font-medium">256</span></span>
+                                                <span class="hover:text-gray-200 cursor-pointer transition-colors flex items-center gap-1.5"><i class="fa-regular fa-comment text-lg"></i> <span class="text-sm">34</span></span>
+                                                <span class="hover:text-gray-200 cursor-pointer transition-colors flex items-center gap-1.5"><i class="fa-solid fa-share-nodes text-lg"></i></span>
+                                            </div>
+                                            <span class="hover:text-white cursor-pointer transition-colors"><i class="fa-regular fa-bookmark text-lg"></i></span>
+                                        </div>
+
+                                        <!-- Sohbet Balonu Tipi Yorum -->
+                                        <div class="glass-panel rounded-xl p-3 flex gap-3 mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center">
+                                                <i class="fa-solid fa-user text-xs text-gray-400"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="flex justify-between items-center mb-1">
+                                                    <span class="font-bold text-sm text-gray-200">movie_lover</span>
+                                                    <span class="text-[10px] text-gray-500">2s</span>
+                                                </div>
+                                                <p class="text-xs text-gray-300 leading-relaxed">
+                                                    Bu replik filmin en ikonik anlarından birini hatırlatıyor. Defalarca izlesem sıkılmam!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-[11px] text-gray-500 font-medium cursor-pointer hover:text-gray-400 mt-2">Tüm 34 yorumu gör</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-primary/10 border border-primary/40 rounded-2xl p-4">
+                                    <p class="text-sm text-gray-300 leading-relaxed flex items-start gap-3">
+                                        <i class="fa-solid fa-circle-info text-primary mt-1"></i>
+                                        <span>Kullanıcılar akışa yeni replik eklemez. Sadece Repliqo’da kayıtlı olan replik kartlarını keşfeder, beğenir, yorumları görür, favorilerine ekler ve yorum yapan kullanıcıları takip edebilir.</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- OYUN MODLARI -->
+                        <!-- 3. OYUN MODLARI (Zaten Yapılmıştı - Aynen Korundu) -->
                         <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 card-hover">
                             <div class="flex items-center justify-between mb-4">
                                 <div class="flex items-center gap-4">
@@ -529,7 +593,7 @@
                                         <p class="text-gray-400">Meydan okuma, quiz ve 2D replik yarışı</p>
                                     </div>
                                 </div>
-                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold">Yakında</span>
+                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold shadow-[0_0_10px_rgba(229,9,20,0.2)]">Yakında</span>
                             </div>
 
                             <div class="mini-ui p-5 text-center">
@@ -566,29 +630,55 @@
                                         </div>
                                     </div>
 
-                                    <div class="relative h-24 rounded-2xl border border-red-900/40 race-track overflow-hidden mb-4">
-                                        <div class="absolute left-[18%] top-6 w-10 h-10 rounded-full bg-blue-500/30 border border-blue-400 flex items-center justify-center">
-                                            <i class="fa-solid fa-person-running text-blue-300"></i>
+                                    <!-- 2D OYUN GÖRSELİ -->
+                                    <div class="relative h-32 rounded-2xl border border-red-900/60 overflow-hidden mb-4 bg-gradient-to-b from-[#070714] to-[#121226] shadow-[0_0_20px_rgba(229,9,20,0.15)] group">
+                                        <div class="absolute inset-0 bg-scroll-anim opacity-60" style="background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                                        <div class="absolute bottom-6 w-full flex items-end gap-[2px] px-2 opacity-50">
+                                            <div class="w-1/6 h-12 bg-gradient-to-t from-[#000] to-[#1a1a3a] rounded-t-sm border-t border-l border-[#2a2a5a]"></div>
+                                            <div class="w-1/5 h-20 bg-gradient-to-t from-[#000] to-[#201530] rounded-t-sm border-t border-l border-[#402a5a]"></div>
+                                            <div class="w-1/4 h-16 bg-gradient-to-t from-[#000] to-[#102030] rounded-t-sm border-t border-l border-[#20405a]"></div>
+                                            <div class="w-1/6 h-24 bg-gradient-to-t from-[#000] to-[#301010] rounded-t-sm border-t border-l border-[#5a2020]"></div>
+                                            <div class="w-1/5 h-14 bg-gradient-to-t from-[#000] to-[#1a1a3a] rounded-t-sm border-t border-l border-[#2a2a5a]"></div>
                                         </div>
-
-                                        <div class="absolute left-[52%] top-6 w-10 h-10 rounded-full bg-red-500/30 border border-red-400 flex items-center justify-center">
-                                            <i class="fa-solid fa-person-running text-red-300"></i>
+                                        <div class="absolute bottom-0 w-full h-8 bg-gradient-to-b from-red-950 to-black border-t-2 border-red-600 shadow-[0_-5px_25px_rgba(229,9,20,0.4)]">
+                                            <div class="w-full h-full bg-scroll-anim opacity-20" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, #fff 10px, #fff 20px);"></div>
+                                            <div class="absolute right-4 top-0 h-full w-6 flex flex-col opacity-90 border-l-2 border-yellow-400">
+                                                <div class="flex w-full h-1/2"><div class="w-1/2 h-full bg-white"></div><div class="w-1/2 h-full bg-black"></div></div>
+                                                <div class="flex w-full h-1/2"><div class="w-1/2 h-full bg-black"></div><div class="w-1/2 h-full bg-white"></div></div>
+                                            </div>
                                         </div>
-
-                                        <div class="absolute bottom-3 left-4 right-4 h-1 bg-gray-800 rounded-full">
-                                            <div class="h-1 w-[55%] bg-primary rounded-full"></div>
+                                        <div class="absolute left-[30%] bottom-7 flex flex-col items-center transition-transform duration-700 group-hover:translate-x-2">
+                                            <div class="bg-black/80 px-2 py-0.5 rounded text-[9px] text-gray-300 border border-gray-700 mb-1">rakip_42</div>
+                                            <div class="w-9 h-9 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center">
+                                                <i class="fa-solid fa-person-running text-red-400 text-lg group-hover:animate-pulse"></i>
+                                            </div>
+                                        </div>
+                                        <div class="absolute left-[58%] bottom-7 flex flex-col items-center z-10 transition-transform duration-700 group-hover:translate-x-8">
+                                            <div class="bg-primary/30 px-2 py-0.5 rounded text-[10px] font-bold text-white border border-primary mb-1 shadow-[0_0_10px_rgba(229,9,20,0.6)]">Sen</div>
+                                            <div class="w-11 h-11 rounded-full bg-blue-500/30 border-2 border-blue-400 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)] relative">
+                                                <i class="fa-solid fa-person-running text-white text-xl group-hover:animate-bounce"></i>
+                                                <div class="absolute -right-2 top-0 text-[10px]">✨</div>
+                                            </div>
+                                        </div>
+                                        <div class="absolute top-2 left-3 right-3 flex items-center gap-2">
+                                            <div class="text-[9px] font-extrabold text-gray-500 tracking-widest">START</div>
+                                            <div class="flex-1 h-1.5 bg-black/80 rounded-full overflow-hidden border border-gray-700">
+                                                <div class="h-full w-[65%] bg-gradient-to-r from-blue-700 to-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.8)] relative"></div>
+                                            </div>
+                                            <div class="text-[9px] font-extrabold text-yellow-500 tracking-widest animate-pulse">FINISH</div>
                                         </div>
                                     </div>
+                                    <!-- 2D OYUN GÖRSELİ BİTİŞ -->
 
                                     <p class="text-gray-300 italic mb-4">
                                         “Büyük bir sorumluluk, büyük güç gerektirir.”
                                     </p>
 
                                     <div class="grid grid-cols-2 gap-3 text-sm">
-                                        <button class="bg-green-600/80 rounded-xl py-3 font-bold">Spider-Man</button>
-                                        <button class="bg-black/60 border border-gray-700 rounded-xl py-3">Batman Begins</button>
-                                        <button class="bg-black/60 border border-gray-700 rounded-xl py-3">The Dark Knight</button>
-                                        <button class="bg-black/60 border border-gray-700 rounded-xl py-3">Iron Man</button>
+                                        <button class="bg-green-600/80 rounded-xl py-3 font-bold border border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.3)]">Spider-Man</button>
+                                        <button class="bg-black/60 border border-gray-700 rounded-xl py-3 hover:bg-gray-800 transition-colors">Batman Begins</button>
+                                        <button class="bg-black/60 border border-gray-700 rounded-xl py-3 hover:bg-gray-800 transition-colors">The Dark Knight</button>
+                                        <button class="bg-black/60 border border-gray-700 rounded-xl py-3 hover:bg-gray-800 transition-colors">Iron Man</button>
                                     </div>
                                 </div>
 
@@ -603,7 +693,7 @@
                             </div>
                         </div>
 
-                        <!-- PROFİL & İSTATİSTİK -->
+                        <!-- 4. PROFİL & İSTATİSTİK -->
                         <div class="bg-cardbg border border-red-900/40 rounded-3xl p-5 card-hover">
                             <div class="flex items-center justify-between mb-4">
                                 <div class="flex items-center gap-4">
@@ -613,61 +703,90 @@
                                         <p class="text-gray-400">Favoriler, rozetler ve ilerleme</p>
                                     </div>
                                 </div>
-                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold">Yakında</span>
+                                <span class="future-badge px-4 py-2 rounded-full text-sm font-bold shadow-[0_0_10px_rgba(229,9,20,0.2)]">Yakında</span>
                             </div>
 
-                            <div class="mini-ui p-5">
-                                <div class="flex items-center justify-between mb-5">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-14 h-14 rounded-full bg-primary/25 border border-primary/50"></div>
-                                        <div>
-                                            <h5 class="font-extrabold">filmsever_</h5>
-                                            <p class="text-sm text-gray-500">Sinema tutkunu</p>
-                                        </div>
-                                    </div>
-                                    <button class="bg-primary/90 px-4 py-2 rounded-full text-sm font-bold">Takip Et</button>
+                            <div class="mini-ui overflow-hidden">
+                                <!-- Kapak Fotoğrafı Simülasyonu -->
+                                <div class="h-24 bg-gradient-to-r from-red-950 via-gray-900 to-black border-b border-gray-800 relative">
+                                    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at center, #fff 1px, transparent 1px); background-size: 10px 10px;"></div>
                                 </div>
-
-                                <div class="grid grid-cols-4 gap-2 text-center mb-5">
-                                    <div class="bg-black/50 border border-gray-800 rounded-xl p-3">
-                                        <p class="text-lg font-extrabold">136</p>
-                                        <p class="text-xs text-gray-500">Favori</p>
-                                    </div>
-                                    <div class="bg-black/50 border border-gray-800 rounded-xl p-3">
-                                        <p class="text-lg font-extrabold">23</p>
-                                        <p class="text-xs text-gray-500">Oyun</p>
-                                    </div>
-                                    <div class="bg-black/50 border border-gray-800 rounded-xl p-3">
-                                        <p class="text-lg font-extrabold">89%</p>
-                                        <p class="text-xs text-gray-500">Doğru</p>
-                                    </div>
-                                    <div class="bg-black/50 border border-gray-800 rounded-xl p-3">
-                                        <p class="text-lg font-extrabold">12</p>
-                                        <p class="text-xs text-gray-500">Rozet</p>
-                                    </div>
-                                </div>
-
-                                <div class="bg-primary/10 border border-primary/40 rounded-2xl p-4 mb-5">
-                                    <p class="text-sm text-gray-300 leading-relaxed">
-                                        Profil alanı; kullanıcının favorilerini, oyun başarısını, rozetlerini ve
-                                        platform içi ilerlemesini gösterir. Kullanıcı platforma yeni replik yüklemez.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <p class="text-sm text-gray-400 mb-3">Rozetler</p>
-                                    <div class="flex gap-3">
-                                        <div class="w-10 h-10 rounded-xl bg-yellow-500/20 border border-yellow-500 flex items-center justify-center">
-                                            <i class="fa-solid fa-trophy text-yellow-400"></i>
+                                
+                                <div class="px-5 pb-5">
+                                    <!-- Profil Header -->
+                                    <div class="flex justify-between items-end -mt-8 mb-5">
+                                        <div class="relative">
+                                            <div class="w-20 h-20 rounded-full bg-gray-900 border-4 border-[#0d0d0d] flex items-center justify-center relative z-10 shadow-lg">
+                                                <i class="fa-solid fa-user-astronaut text-3xl text-gray-400"></i>
+                                            </div>
+                                            <div class="absolute bottom-0 right-0 w-6 h-6 bg-primary rounded-full border-2 border-[#0d0d0d] z-20 flex items-center justify-center">
+                                                <i class="fa-solid fa-check text-white text-[10px]"></i>
+                                            </div>
                                         </div>
-                                        <div class="w-10 h-10 rounded-xl bg-primary/20 border border-primary flex items-center justify-center">
-                                            <i class="fa-solid fa-star text-primary"></i>
+                                        <button class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors mb-1">Profili Düzenle</button>
+                                    </div>
+
+                                    <div class="mb-5">
+                                        <h5 class="text-xl font-extrabold">filmsever_</h5>
+                                        <p class="text-sm text-gray-400 mb-3">Sinema tutkunu | Bilim Kurgu & Gerilim 🎬</p>
+                                        
+                                        <!-- Level Çubuğu -->
+                                        <div class="glass-panel p-3 rounded-xl">
+                                            <div class="flex justify-between text-xs font-bold mb-1">
+                                                <span class="text-gray-300">Seviye 14: Sinefil</span>
+                                                <span class="text-primary">2400 / 3000 XP</span>
+                                            </div>
+                                            <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                                                <div class="h-full bg-gradient-to-r from-red-600 to-primary w-[80%] shadow-[0_0_10px_rgba(229,9,20,0.8)]"></div>
+                                            </div>
                                         </div>
-                                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500 flex items-center justify-center">
-                                            <i class="fa-solid fa-gem text-purple-300"></i>
+                                    </div>
+
+                                    <!-- Profesyonel İstatistik Izgarası -->
+                                    <div class="grid grid-cols-4 gap-2 text-center mb-6">
+                                        <div class="stat-card rounded-xl p-3 border-t-2 border-t-gray-700">
+                                            <p class="text-xl font-black text-white">136</p>
+                                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold mt-1">Favori</p>
                                         </div>
-                                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500 flex items-center justify-center">
-                                            <i class="fa-solid fa-medal text-blue-300"></i>
+                                        <div class="stat-card rounded-xl p-3 border-t-2 border-t-blue-500/50">
+                                            <p class="text-xl font-black text-white">23</p>
+                                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold mt-1">Oyun</p>
+                                        </div>
+                                        <div class="stat-card rounded-xl p-3 border-t-2 border-t-green-500/50">
+                                            <p class="text-xl font-black text-white">89%</p>
+                                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold mt-1">Doğru</p>
+                                        </div>
+                                        <div class="stat-card rounded-xl p-3 border-t-2 border-t-purple-500/50">
+                                            <p class="text-xl font-black text-white">12</p>
+                                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold mt-1">Rozet</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-primary/10 border border-primary/40 rounded-2xl p-4 mb-6">
+                                        <p class="text-sm text-gray-300 leading-relaxed">
+                                            Profil alanı; kullanıcının favorilerini, oyun başarısını, rozetlerini ve platform içi ilerlemesini gösterir. Kullanıcı platforma yeni replik yüklemez.
+                                        </p>
+                                    </div>
+
+                                    <!-- Rozet Vitrini -->
+                                    <div>
+                                        <div class="flex justify-between items-center mb-3">
+                                            <p class="text-sm font-bold text-gray-300">Rozet Vitrini</p>
+                                            <p class="text-xs text-primary cursor-pointer hover:underline">Tümünü Gör</p>
+                                        </div>
+                                        <div class="flex gap-3 bg-black/40 p-3 rounded-2xl border border-gray-800">
+                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-yellow-700/20 border border-yellow-500/50 flex items-center justify-center shadow-[inset_0_0_10px_rgba(234,179,8,0.2)] group cursor-pointer hover:scale-105 transition-transform">
+                                                <i class="fa-solid fa-trophy text-yellow-400 text-lg group-hover:drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]"></i>
+                                            </div>
+                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-red-800/20 border border-primary/50 flex items-center justify-center shadow-[inset_0_0_10px_rgba(229,9,20,0.2)] group cursor-pointer hover:scale-105 transition-transform">
+                                                <i class="fa-solid fa-fire text-primary text-lg group-hover:drop-shadow-[0_0_8px_rgba(229,9,20,0.8)]"></i>
+                                            </div>
+                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-800/20 border border-purple-500/50 flex items-center justify-center shadow-[inset_0_0_10px_rgba(168,85,247,0.2)] group cursor-pointer hover:scale-105 transition-transform">
+                                                <i class="fa-solid fa-gem text-purple-400 text-lg group-hover:drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]"></i>
+                                            </div>
+                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-800/20 border border-blue-500/50 flex items-center justify-center shadow-[inset_0_0_10px_rgba(59,130,246,0.2)] group cursor-pointer hover:scale-105 transition-transform">
+                                                <i class="fa-solid fa-medal text-blue-400 text-lg group-hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -684,15 +803,12 @@
     <!-- BUGÜN / YAKINDA ÖZET -->
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-5">
-
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-8 card-hover">
                     <div class="flex items-center gap-3 mb-6">
                         <i class="fa-solid fa-circle-check text-primary text-3xl"></i>
                         <h3 class="text-3xl font-extrabold">Bugün</h3>
                     </div>
-
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div class="bg-black/50 border border-gray-800 rounded-2xl p-5 text-center">
                             <i class="fa-solid fa-magnifying-glass text-primary text-2xl mb-3"></i>
@@ -714,7 +830,6 @@
                         <i class="fa-solid fa-rocket text-primary text-3xl"></i>
                         <h3 class="text-3xl font-extrabold">Yakında</h3>
                     </div>
-
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         <div class="bg-black/50 border border-gray-800 rounded-2xl p-5 text-center">
                             <i class="fa-solid fa-border-all text-primary text-2xl mb-3"></i>
@@ -734,7 +849,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -742,7 +856,6 @@
     <!-- HEDEF KİTLE -->
     <section class="py-20 bg-black/40 border-y border-red-900/30">
         <div class="max-w-7xl mx-auto px-5">
-
             <div class="mb-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
                     Kimler İçin?
@@ -753,9 +866,7 @@
                     ve favori repliklerine kolayca ulaşmak isteyen kullanıcılar için tasarlanmıştır.
                 </p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
                     <i class="fa-solid fa-tv text-primary text-3xl mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">Dizi ve Film Tutkunları</h3>
@@ -763,7 +874,6 @@
                         Sevdiği sahneleri ve replikleri tekrar bulmak isteyen kullanıcılar.
                     </p>
                 </div>
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
                     <i class="fa-solid fa-users text-primary text-3xl mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">Fandom Toplulukları</h3>
@@ -771,7 +881,6 @@
                         Ortak dizi ve film kültürü üzerinden etkileşim kurmak isteyen topluluklar.
                     </p>
                 </div>
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
                     <i class="fa-solid fa-photo-film text-primary text-3xl mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">İçerik Üreticileri</h3>
@@ -779,7 +888,6 @@
                         Doğru replik ve sahne bilgisine hızlıca ulaşmak isteyen kullanıcılar.
                     </p>
                 </div>
-
                 <div class="bg-cardbg border border-red-900/40 rounded-3xl p-6 text-center card-hover">
                     <i class="fa-solid fa-graduation-cap text-primary text-3xl mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">Öğrenciler ve Kulüpler</h3>
@@ -787,7 +895,6 @@
                         Sinema, medya ve dijital kültür alanında içerik keşfetmek isteyen kullanıcılar.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -795,41 +902,33 @@
     <!-- AMAÇ -->
     <section class="py-20">
         <div class="max-w-5xl mx-auto px-5 text-center">
-
             <div class="bg-cardbg border border-red-900/40 rounded-3xl p-8 md:p-12 red-glow">
                 <i class="fa-solid fa-quote-right text-primary text-4xl mb-6"></i>
-
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-5">
                     Her Replik, Yeni Bir Keşif.
                 </h2>
-
                 <p class="text-gray-300 text-lg leading-relaxed">
                     Repliqo’nun amacı, kullanıcıların dizi ve film repliklerini tek bir düzenli platformda bulmasını,
                     sahne context bilgisini anlamasını ve zamanla sosyal keşif ile oyunlaştırılmış daha güçlü bir deneyim yaşamasını sağlamaktır.
                 </p>
             </div>
-
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-black border-t border-red-900/40 py-10">
         <div class="max-w-7xl mx-auto px-5 text-center">
-
             <h2 class="text-3xl font-extrabold mb-2">
                 REPLI<span class="text-primary">QO</span>
             </h2>
-
             <p class="text-gray-400 mb-4">
                 Dizi ve Film Replikleri İçin Sosyal Keşif Platformu
             </p>
-
             <p class="text-gray-500 text-sm leading-relaxed">
                 Doğu Akdeniz Üniversitesi<br>
                 Öğrenci: Erdinç Tazegül<br>
                 Genç Beyinler Yeni Fikirler KIBRIS - Proje Pazarı ve Bitirme Projeleri Yarışması
             </p>
-
         </div>
     </footer>
 
